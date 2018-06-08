@@ -37,7 +37,10 @@ exports.digest = function digest (options) {
 
   // convert secret to buffer
   if (!Buffer.isBuffer(secret)) {
-    if (encoding === 'base32') { secret = base32.decode(secret); }
+    if (encoding === 'base32'){
+        secret = base32.decode(secret);
+    }
+    
     secret = new Buffer(secret, encoding);
   }
 
